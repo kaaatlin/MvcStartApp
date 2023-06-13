@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Authors";
+}
+
+<style>
+     table {
+       border-spacing: 0 15px;
+       align-self: center;
+     }
+     th {
+       background-color: #4287f5;
+       color: white;
+     }
+     th,
+     td {
+       width: 150px;
+       text-align: center;
+       border: 1px solid black;
+       padding: 5px;
+     }
+     h2 {
+       color: #4287f5;
+     }
+   </style>
+
+<div class="text-center">
+    <h1 class="display-4">Authors page</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2 class="display-4" style="text-align: center">Пользователи проекта</h2>
+    <br>
+    <table>
+        <tr>
+            <td>Идентификатор</td>
+            <td>Имя</td>
+            <td>Дата регистрации</td>
+        </tr>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FirstName</td>
+                <td>@user.JoinDate</td>
+            </tr>
+        }
+    </table>
+</div>
